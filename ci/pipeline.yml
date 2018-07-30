@@ -1,0 +1,19 @@
+resources:
+- name: master-repo
+  type: git
+  source:
+    uri: https://github.com/kpritychenko/pasadena.git
+    branch: master
+
+jobs:
+- name: create-package
+  public: true
+  serial: true
+  plan:
+  - get: master-repo
+    trigger: true
+  - task: build-package
+    file: master-repo/ci/build/yarn-webpack.yml
+    input_mapping: {source: master-repo}
+  - task: deploy-package
+    file: master-repo/ci/build/deploy.yml

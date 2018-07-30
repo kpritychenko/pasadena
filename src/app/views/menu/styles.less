@@ -1,0 +1,27 @@
+.item {
+    padding: 6px 24px;
+    font-size: 21px;
+    color: white;
+    font-weight: lighter;
+    cursor: pointer;
+
+    &:hover {
+        background: fade(white, 50%);
+        border-radius: 4px;
+      }
+}
+
+.menu {
+    display: flex;
+    justify-content: space-around;
+    background: fade(black, 50%);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 999;
+}
+
+.item-container {
+    margin: 12px;
+    display: flex;
+}

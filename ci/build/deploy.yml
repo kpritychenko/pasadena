@@ -1,0 +1,74 @@
+platform: linux
+
+image_resource:
+  type: docker-image
+  source:
+    repository: 89.223.92.96:5000/node
+    tag: "latest"
+    insecure_registries: [ "89.223.92.96:5000" ]
+
+inputs:
+- name: build
+
+outputs:
+- name: www
+
+run:
+  dir: build
+  path: sh
+  args:
+  - -c
+  - |
+    echo "KEK"
+
+    ls -la
+
+    node_modules/.bin/webpack --bail
+
+    mkdir ~/.ssh
+    touch ~/.ssh/id_rsa.pub
+    touch ~/.ssh/id_rsa
+
+    echo 'ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCtanjKrqAIXqjWMqGnWiVTLHmoxgEgFs6Dy/12UTvBdzWqagDU+pPHOE99/natzYh1xfGDYJ708+lkFesAHedkrVQOBBKyuAzWH7pL7YX520LlIJlp8xjrkTGOFqya5+8IQj9PWeV7pj+pjqzVMF8tw7gtOFmzUKVpyzYIbtHKrwEbJwza68NZ1pYDtUa7TA1/M2jqVOtCgmlzq2tkpEdB6QpGttSjc0gOk6JRwNDznnOBW6h5Py7T6giLGtbd0tGgYB+mqrBS5Q/1hwnygkSahpO0YS0+EHWvZuAMMyImEvSCAsMtc2+sBHwSkPzeOnETBxx5ApIgB/VchctVgRFH konstantinpritychenko@MacBook-Pro-Konstantin-2.local' > ~/.ssh/id_rsa.pub
+
+    echo '-----BEGIN RSA PRIVATE KEY-----
+    MIIEpAIBAAKCAQEArWp4yq6gCF6o1jKhp1olUyx5qMYBIBbOg8v9dlE7wXc1qmoA
+    1PqTxzhPff52rc2IdcXxg2Ce9PPpZBXrAB3nZK1UDgQSsrgM1h+6S+2F+dtC5SCZ
+    afMY65ExjhasmufvCEI/T1nle6Y/qY6s1TBfLcO4LThZs1Clacs2CG7Ryq8BGycM
+    2uvDWdaWA7VGu0wNfzNo6lTrQoJpc6trZKRHQekKRrbUo3NIDpOiUcDQ855zgVuo
+    eT8u0+oIixrW3dLRoGAfpqqwUuUP9YcJ8oJEmoaTtGEtPhB1r2bgDDMiJhL0ggLD
+    LXNvrAR8EpD83jpxEwcceQKSIAf1XIXLVYERRwIDAQABAoIBACJ+h0Bps9N2YMca
+    kyUivUHqGtkDab3kS3fT37rlNamp+LbJFxlGLpb2EHnTX+/6biZfFUc4tOWsjsQl
+    x/Th/eD8yTdwf/ekvIjrDreDq56jio7hCSMWA+L3oo/M2tCFSfquksFJ9GfADfHA
+    O4i8cnI7+CqmhtEwPXbpwPm0cW6LROpAHhMAWnTF3qkzw+rL3unYHit7XcFOjWaW
+    AgXlhuO1Jxqz1Ogs1AOYAT6lgOrKyNnX4n6Th1NJztWpKu2PRc5nrOyc8pU4Kp8M
+    L52xzPRxGfC8+9mH2aMLYXJ39Ajy/Ou69JLe4h1Eh39MduRM6vNxdVDIrN5FO0JI
+    3k/dkYECgYEA5DLic9pLeYbAUWhCCKzgs879Sn7qHFrvyDmo+yReXKwIZn0O836W
+    l+6T7GpAnra4OVMYMILM0iJ+awfQVW79I+oXvKicZyrAkT7nLfl1j98sqX3fHV91
+    b7G7bCHltOgX5hDgQQakeWN7JdpGewt359KJT+1HNlsqO4CjBHykIHcCgYEAwosB
+    vmkNXjnTgppNg/7eyatcN1QOpI1Pkm/AIP6Iv5frRIHhYxGBF84RrrQ7KGnCGbn+
+    Gc81rs2FBjuSwvhV4yw9AoZ2nkOpA8ufBX1hpZsayoU87Mk+0e7NsRIZxONZ6P95
+    EQBUKpiHW6SxcgT1S5TtK6C+oA0XqslYW1+9GbECgYAWdzv8E92iVTXRzeXSXNKy
+    YQpmrx/1Mq6wk5yjPO1dSkJ5dI5oQmopAv/lIoDCH1L7scaL4BSyC1tOxjIodwjM
+    5Fr548+iCH90zTCNQiXkyB/pf87bYW56VJETEDNBIChaKgcp37GJkdWp4FdX/cUM
+    OZnzGHUOUONTgFKMOokd+QKBgQDAPtPDUVbXhXdheZAeXy/TxJYFSviJXeeDQxFu
+    yXljNAJXGa4b00Fpv8aziQFox1H7UFQtNxnKmufYp+g46WUecCn+I9h2P1B3IrIL
+    n8Jt/59zAEWbjKeal00GrWdvrGe+Gy+NQHDsAvzH8DE2BnZMcWgKE/gse6Omrv+0
+    lCBvkQKBgQCufFXkpe0nIwDQto3OOHJ0v2dYz33hNmXZHk+H07MfymX7LEYmVez5
+    EMyBxPbe1diQwBvktBC0tWUPY5Et8zFdyO0Zw+62/WR3QbufHv1E/lJtQdEokcgz
+    R2dw5hvdhHN9Il83i5m64KFxdukAhYKgwL5YLhGOm90wBRW0HLuwBQ==
+    -----END RSA PRIVATE KEY-----' > ~/.ssh/id_rsa
+
+    chmod 600 ~/.ssh/id_rsa
+    chmod 600 ~/.ssh/id_rsa.pub
+
+    eval 'ssh-agent -s'
+    ssh-add ~/.ssh/id_rsa
+
+    ssh -o "StrictHostKeyChecking no" -o "PasswordAuthentication no" root@89.223.92.96 'rm -rf /srv/www/pasadena/www/static/build/* | exit'
+
+    ls -la ../build/www/static/build
+
+    scp -r -o "StrictHostKeyChecking no" -o "PasswordAuthentication no" ../build/www/static/build root@89.223.92.96:/srv/www/pasadena/www/static/
+
+    echo "ZAEBIS, BILD USTANOVLE SUKA" 

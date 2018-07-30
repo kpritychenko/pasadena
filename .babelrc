@@ -1,0 +1,18 @@
+{
+    "presets": [
+        "env",
+        ["es2015", { "modules": false, "loose": true }],
+        "stage-0",
+        "react"
+    ],
+    "plugins": [
+        ["react-css-modules", {
+          "generateScopedName": "[local]_[hash:base64:5]",
+          "filetypes": {
+            ".less": {
+              "syntax": "postcss-less"
+            }
+          }
+        }]
+      ]
+}

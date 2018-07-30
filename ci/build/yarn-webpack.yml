@@ -1,0 +1,34 @@
+platform: linux
+
+image_resource:
+  type: docker-image
+  source:
+    repository: 89.223.92.96:5000/node
+    tag: "latest"
+    insecure_registries: [ "89.223.92.96:5000" ]
+
+inputs:
+- name: source
+
+outputs:
+- name: build
+
+params:
+  repo: ""
+
+run:
+  dir: source
+  path: sh
+  args:
+  - -c
+  - |
+    yarn install
+
+    ls -la
+
+    cp -R * ../build/
+    cp .babelrc ../build/
+
+    cd ../build/
+
+    ls -la
