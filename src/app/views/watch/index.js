@@ -15,7 +15,7 @@ export default class Watch extends React.Component<> {
                             alt=""
                         />
                         <div styleName="covers-container">
-                            <iframe width="560" height="315" src="https://www.youtube.com/embed/iVM5ZKkdmDw" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                            <iframe width="560" height="315" src="https://www.youtube.com/embed/gGF77gO1zVQ" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
                         </div>
                     </div>
                 </div>
