@@ -2,8 +2,7 @@ const cacheName = 'v1';
 const cacheFiles = [
     'index.html',
     'main.a48e48ab600a850cdf70.css',
-    'main.a48e48ab600a850cdf70.js',
-    '/src'
+    'main.a48e48ab600a850cdf70.js'
 
 ];
 
