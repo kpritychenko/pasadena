@@ -14,7 +14,7 @@ self.addEventListener('install', e => {
             .then(cache => {
                 console.log('SW cachin', cache);
 
-                return cache.addAll('/');
+                return cache.addAll(['/']);
             })
             .then(() => {
                 console.log(1111111, caches);
