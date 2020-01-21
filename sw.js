@@ -27,7 +27,7 @@ self.addEventListener('activete', e => {
 self.addEventListener('fetch', e => {
     console.log(123);
     e.respondWith(fetch(e.request).catch(() => {
-        console.log(1);
+        console.log(1, caches);
         caches.match(e.request);
     }));
 });
