@@ -1,4 +1,4 @@
-const cacheName = 'v1';
+const cacheName = 'pasadena_cache1';
 const cacheAssets = [
     'index.html',
     'main.a48e48ab600a850cdf70.js',
@@ -16,7 +16,10 @@ self.addEventListener('install', e => {
 
                 cache.addAll(cacheAssets);
             })
-            .then(() => self.skipWaiting())
+            .then(() => {
+                console.log(1111111, caches);
+                self.skipWaiting()
+            })
     );
 });
 
