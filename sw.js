@@ -24,6 +24,6 @@ self.addEventListener('activete', e => {
     console.log('SW activeted');
 });
 
-// self.addEventListener('fetch', e => {
-//     e.respondWith(fetch(e.request).catch(() => caches.match(e.request)));
-// });
+self.addEventListener('fetch', e => {
+    e.respondWith(fetch(e.request).catch(() => caches.match(e.request)));
+});
