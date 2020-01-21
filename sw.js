@@ -20,7 +20,7 @@ self.addEventListener('install', e => {
     );
 });
 
-self.addEventListener('activete', e => {
+self.addEventListener('activate', e => {
     console.log('SW activeted', caches);
 }); 
 
