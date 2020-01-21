@@ -12,7 +12,7 @@ self.addEventListener('install', e => {
         caches
             .open(cacheName)
             .then(cache => {
-                console.log('SW cachin');
+                console.log('SW cachin', cache);
 
                 cache.addAll(cacheFiles);
             })
@@ -22,7 +22,7 @@ self.addEventListener('install', e => {
 
 self.addEventListener('activete', e => {
     console.log('SW activeted');
-});
+}); 
 
 self.addEventListener('fetch', e => {
     console.log(123);
