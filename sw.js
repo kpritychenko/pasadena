@@ -25,7 +25,7 @@ self.addEventListener('activete', e => {
 }); 
 
 self.addEventListener('fetch', e => {
-    console.log(123);
+    console.log(123, caches);
     e.respondWith(fetch(e.request).catch(() => {
         console.log(1, caches);
         caches.match(e.request);
