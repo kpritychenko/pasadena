@@ -1,9 +1,8 @@
 const cacheName = 'v1';
 const cacheFiles = [
-    'index.html',
+    'main.a48e48ab600a850cdf70.js',
     'main.a48e48ab600a850cdf70.css',
-    'main.a48e48ab600a850cdf70.js'
-
+    'index.html'
 ];
 
 self.addEventListener('install', e => {
@@ -24,3 +23,9 @@ self.addEventListener('install', e => {
 self.addEventListener('activete', e => {
     console.log('SW activeted');
 });
+
+self.addEventListener('fetch', e => {
+    e.responnWith(
+        fetch(e.request).catch(() => caches.match(e.request));
+    );
+})
