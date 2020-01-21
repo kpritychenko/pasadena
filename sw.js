@@ -25,7 +25,7 @@ self.addEventListener('activete', e => {
 });
 
 self.addEventListener('fetch', e => {
-    e.responnWith(
-        fetch(e.request).catch(() => caches.match(e.request));
+    e.respondWith(
+        fetch(e.request).catch(() => caches.match(e.request))
     );
-})
+});
