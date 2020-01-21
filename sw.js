@@ -1,9 +1,8 @@
 const cacheName = 'v1';
 const cacheFiles = [
-    '/',
+    'index.html',
     'main.a48e48ab600a850cdf70.js',
-    'main.a48e48ab600a850cdf70.css',
-    'index.html'
+    'main.a48e48ab600a850cdf70.css'
 ];
 
 self.addEventListener('install', e => {
