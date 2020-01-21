@@ -1,5 +1,5 @@
 const cacheName = 'v1';
-const cacheFiles = [
+const cacheAssets = [
     'index.html',
     'main.a48e48ab600a850cdf70.js',
     'main.a48e48ab600a850cdf70.css'
@@ -14,14 +14,14 @@ self.addEventListener('install', e => {
             .then(cache => {
                 console.log('SW cachin', cache);
 
-                cache.addAll(cacheFiles);
+                cache.addAll(cacheAssets);
             })
             .then(() => self.skipWaiting())
     );
 });
 
 self.addEventListener('activete', e => {
-    console.log('SW activeted');
+    console.log('SW activeted', caches);
 }); 
 
 self.addEventListener('fetch', e => {
