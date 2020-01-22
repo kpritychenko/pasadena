@@ -27,10 +27,10 @@ self.addEventListener('activate', e => {
     console.log('SW activeted', caches);
 }); 
 
-self.addEventListener('fetch', e => {
-    console.log(123, caches);
-    e.respondWith(fetch(e.request).catch(() => {
-        console.log(1, caches);
-        return caches.match(e.request);
-    }));
-});
+// self.addEventListener('fetch', e => {
+//     console.log(123, caches);
+//     e.respondWith(fetch(e.request).catch(() => {
+//         console.log(1, caches);
+//         return caches.match(e.request);
+//     }));
+// });
