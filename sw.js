@@ -1,9 +1,4 @@
-const cacheName = 'pasadena_cache1';
-const cacheAssets = [
-    'index.html',
-    'main.a48e48ab600a850cdf70.js',
-    'main.a48e48ab600a850cdf70.css'
-];
+const cacheName = 'v1';
 
 self.addEventListener('install', e => {
     console.log('SW installed');
@@ -28,9 +23,14 @@ self.addEventListener('activate', e => {
 }); 
 
 self.addEventListener('fetch', e => {
-    console.log(123, e.request);
-    e.respondWith(fetch(e.request).catch(() => {
-        console.log(1, caches);
-        return caches.match(e.request);
-    }));
+    e.respondWith(
+        fetch(e.request)
+            .then(res => {
+                caches
+                    .open(cacheName)
+                    .then(cache => {
+                        cache.put(e.request, res.clone())
+                    })
+            }).catch(() => caches.match(e.request))
+    );
 });
