@@ -1,6 +1,6 @@
 const cacheName = 'v2';
 const cacheFiles = [
-    '',
+    '/',
     'main.a48e48ab600a850cdf70.js',
     'main.a48e48ab600a850cdf70.css'
 ]
