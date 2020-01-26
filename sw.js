@@ -1,7 +1,23 @@
-const cacheName = 'v1';
+const cacheName = 'v2';
+const cacheFiles = [
+    '',
+    'main.a48e48ab600a850cdf70.js',
+    'main.a48e48ab600a850cdf70.css'
+]
 
 self.addEventListener('install', e => {
     console.log('SW installed');
+
+    e.waitUntil(
+        caches
+            .open('v1')
+            .then(cache => {
+                console.log('SW cachin');
+
+                cache.addAll(cacheFiles);
+            })
+            .then(() => self.skipWaiting())
+    );
 });
 
 self.addEventListener('activate', e => {
