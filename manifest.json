@@ -2,7 +2,7 @@
     "name": "Pasadena night",
     "short_name": "Pasadena",
     "description": "Pasadena night home page",
-    "start_url": "/pasadena/index.html",
+    "start_url": "/pasadena/",
     "scope": "/",
     "icons": [
       {
