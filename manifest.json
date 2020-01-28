@@ -1,0 +1,8 @@
+{
+    "name": "Pasadena night",
+    "short_name": "Pasadena",
+    "description": "Pasadena night home page",
+    "start_url": "/index.html",
+    "scope": "/",
+    "display": "standalone"
+  }
