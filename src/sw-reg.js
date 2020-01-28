@@ -1,3 +1,4 @@
+
 export default () => {
     if (navigator && navigator.serviceWorker) {
         window.addEventListener('load', () => {
