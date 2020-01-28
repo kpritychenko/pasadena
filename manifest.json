@@ -2,7 +2,7 @@
     "name": "Pasadena night",
     "short_name": "Pasadena",
     "description": "Pasadena night home page",
-    "start_url": "/pasadena",
+    "start_url": "/pasadena/.",
     "icons": [
       {
         "src": "src/images/covers/beauty-of-night.jpg",
