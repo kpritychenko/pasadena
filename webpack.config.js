@@ -3,6 +3,7 @@ const path = require('path');
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const CleanPlugin = require('clean-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const CopyPlugin = require('copy-webpack-plugin');
 
 const isDevelopment = !process.env.production;
 const isProduction = process.env.production;
@@ -82,6 +83,10 @@ const config = {
     },
     plugins: [
         new CleanPlugin(['www/static/build'], __dirname),
+        new CopyPlugin([{
+            from: 'sw.js',
+            to: './'
+        }]),
         new MiniCssExtractPlugin({
             filename: 'main.[chunkhash].css',
             allChunks: true
@@ -94,4 +99,4 @@ const config = {
     ]
 };
   
-  module.exports = config;
+module.exports = config;

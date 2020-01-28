@@ -1,0 +1,21 @@
+{
+    "name": "Pasadena night",
+    "short_name": "Pasadena",
+    "description": "Pasadena night home page",
+    "start_url": "/pasadena/.",
+    "icons": [
+      {
+        "src": "src/images/covers/beauty-of-night.jpg",
+        "sizes": "192x192",
+        "type": "image/png"
+      },
+      {
+        "src": "src/images/covers/beauty-of-night.jpg",
+        "sizes": "512x512",
+        "type": "image/png"
+      }
+    ],
+    "display": "standalone",
+    "background_color": "#fff",
+    "theme_color": "#f0b937"
+  }
